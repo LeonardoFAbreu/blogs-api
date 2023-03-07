@@ -3,7 +3,7 @@ const userService = require('../services/login');
 
 const { JWT_SECRET } = process.env;
 
-const userValidation = async (req, res) => {
+const loginValidation = async (req, res) => {
     const { email, password } = req.body;
     if (!email || !password) {
       return res.status(400).json({ message: 'Some required fields are missing' });
@@ -21,4 +21,4 @@ const userValidation = async (req, res) => {
     return res.status(200).json({ token });
   };
 
-module.exports = { userValidation };
+module.exports = { loginValidation };

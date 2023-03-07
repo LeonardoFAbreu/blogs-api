@@ -2,7 +2,8 @@
 
 const express = require('express');
 
-const loginController = require('./controllers/login');
+const loginRouter = require('./routes/loginRoute');
+const userRouter = require('./routes/userRoute');
 
 // ...
 
@@ -15,7 +16,8 @@ app.get('/', (_request, response) => {
 
 app.use(express.json());
 
-app.post('/login', loginController.userValidation);
+app.use('/login', loginRouter);
+app.use('/user', userRouter);
 
 // ...
 
