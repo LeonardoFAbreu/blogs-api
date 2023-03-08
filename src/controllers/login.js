@@ -9,7 +9,7 @@ const loginValidation = async (req, res) => {
       return res.status(400).json({ message: 'Some required fields are missing' });
     }
     const user = await userService.userValidation({ email, password });
-    console.log('Insira o usuário', user);
+    // console.log('Insira o usuário', user);
     if (!user) return res.status(400).json({ message: 'Invalid fields' });
     const payload = {
       email,
