@@ -25,7 +25,22 @@ const getAll = async (_req, res) => {
   }
 };
 
+const getById = async (req, res, next) => {
+  try {
+    const { id } = req.params;
+    const { status, message } = await UserService.getById(id);
+    if (status === 404) {
+      return res.status(status).json({ message });
+    }
+    delete message.dataValues.password;
+    return res.status(status).json(message);
+  } catch (error) {
+    return next(error);
+  }
+};
+
 module.exports = { 
   createUser,
   getAll,
+  getById,
 };
