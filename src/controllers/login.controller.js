@@ -1,5 +1,5 @@
 const jwt = require('jsonwebtoken');
-const userService = require('../services/login');
+const { UserService } = require('../services');
 
 const { JWT_SECRET } = process.env;
 
@@ -8,7 +8,7 @@ const loginValidation = async (req, res) => {
     if (!email || !password) {
       return res.status(400).json({ message: 'Some required fields are missing' });
     }
-    const user = await userService.userValidation({ email, password });
+    const user = await UserService.userValidation({ email, password });
     // console.log('Insira o usuário', user);
     if (!user) return res.status(400).json({ message: 'Invalid fields' });
     const payload = {
