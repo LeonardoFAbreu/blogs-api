@@ -1,4 +1,4 @@
-const PostCategoryModel = (sequelize, DataTypes) => {
+module.exports = (sequelize, DataTypes) => {
   const PostCategory = sequelize.define('PostCategory', {
 
     postId: {
@@ -36,5 +36,3 @@ const PostCategoryModel = (sequelize, DataTypes) => {
 
   return PostCategory;
 };
-
-module.exports = PostCategoryModel;

@@ -1,4 +1,4 @@
-const BlogPostModel = (sequelize, DataTypes) => {
+module.exports = (sequelize, DataTypes) => {
   const BlogPost = sequelize.define('BlogPost', {
     id: {
       allowNull: false,
@@ -43,5 +43,3 @@ const BlogPostModel = (sequelize, DataTypes) => {
 
   return BlogPost;
 };
-
-module.exports = BlogPostModel;
