@@ -2,7 +2,7 @@ const express = require('express');
 
 const router = express.Router();
 
-const { userController } = require('../controllers');
+const { UserController } = require('../controllers');
 
 const {
   nameValidation,
@@ -17,11 +17,11 @@ router.post(
   nameValidation,
   emailValidation,
   passwordValidation,
-  userController.createUser,
+  UserController.createUser,
 );
 
-router.get('/', tokenValidation, userController.getAll);
+router.get('/', tokenValidation, UserController.getAll);
 
-router.get('/:id', tokenValidation, userController.getById);
+router.get('/:id', tokenValidation, UserController.getById);
 
 module.exports = router;

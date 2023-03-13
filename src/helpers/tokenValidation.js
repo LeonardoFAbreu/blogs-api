@@ -8,7 +8,7 @@ const tokenValidation = (req, res, next) => {
     }
 
     const payload = verifyToken(token);
-    req.data = payload.data;
+    req.body.data = payload;
 
     next();
   } catch (error) {

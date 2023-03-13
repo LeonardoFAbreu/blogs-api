@@ -13,6 +13,7 @@ const loginValidation = async (req, res) => {
     if (!user) return res.status(400).json({ message: 'Invalid fields' });
     const payload = {
       email,
+      id: user.dataValues.id,
       admin: false,
     };
     const token = jwt.sign(payload, JWT_SECRET, {
@@ -21,4 +22,4 @@ const loginValidation = async (req, res) => {
     return res.status(200).json({ token });
   };
 
-module.exports = { loginValidation };
+  module.exports = { loginValidation };

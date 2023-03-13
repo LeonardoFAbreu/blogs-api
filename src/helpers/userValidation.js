@@ -18,6 +18,7 @@ const emailValidation = async (req, res, next) => {
   }
   const validEmail = await User.findOne({ where: { email } });
   if (validEmail) return res.status(409).json({ message: 'User already registered' }); 
+  
   next();
 };
 
