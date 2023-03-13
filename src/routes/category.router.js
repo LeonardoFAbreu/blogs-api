@@ -5,9 +5,9 @@ const { validateCategoryName } = require('../helpers/categoryValidation');
 
 const router = express.Router();
 
-router.post('/',
-tokenValidation,
-validateCategoryName,
+router.post('/', 
+tokenValidation, 
+validateCategoryName, 
 CategoryController.createCategory);
 
 router.get('/', tokenValidation, CategoryController.getAll);

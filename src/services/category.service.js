@@ -9,4 +9,5 @@ const getAll = async () => Category.findAll();
 
 module.exports = { 
   createCategory,
-  getAll };
+  getAll,
+};
