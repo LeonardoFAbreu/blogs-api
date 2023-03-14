@@ -1,4 +1,4 @@
-module.exports = (sequelize, DataTypes) => {
+const BlogPost = (sequelize, DataTypes) => {
   const BlogPost = sequelize.define('BlogPost', {
     id: {
       allowNull: false,
@@ -34,8 +34,6 @@ module.exports = (sequelize, DataTypes) => {
     timestamps: false,
     tableName: 'blog_posts',
     underscored: true,
-    createdAt: 'published',
-		updatedAt: 'updated',
   });
 
   BlogPost.associate = (models) => {
@@ -45,3 +43,5 @@ module.exports = (sequelize, DataTypes) => {
 
   return BlogPost;
 };
+
+module.exports = BlogPost;
